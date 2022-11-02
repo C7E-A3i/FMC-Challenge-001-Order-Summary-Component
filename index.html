@@ -1,0 +1,207 @@
+<!--TODO:
+- annual plan spacing
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Order summary card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Red+Hat+Display:wght@500;700;900&display=swap');
+      
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      /* Remove default margin */
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      p,div
+     {
+        margin: 0;
+        padding: 0;
+      }
+
+      body{
+        font-family: 'Red Hat Display', sans-serif;
+        background-color:white;
+        display: flex;
+        align-items: center;
+        min-height: 100vh; 
+        font-size: 16px;
+        padding: 8px;
+      }
+      .main_container{
+        max-width: 335px;
+        margin: 0 auto;
+        border-radius: 20px;
+      }
+      .head_img img[name="dancer"]{
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      /*contains the text on the card*/
+      .order_summary_container{
+        background-color: aqua;
+        padding-bottom: 5px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .order_summary_text_container{
+        text-align: center;
+      }
+
+      .order_summary_text_container h2{
+        padding-top: 30px;
+        padding-bottom: 15px;
+        color: hsl(223, 47%, 23%);
+      }
+      .order_summary_text_container p{
+        color: hsl(224, 23%, 55%);
+        padding-bottom: 20px;
+      }
+      /*this rea contains the music img, annual plan txt & $$, and changePlan link*/
+      .annual_plan_container{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 15px;
+        display: flex;
+        background-color: hsl(225, 100%, 98%);
+        border-radius: 10px;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .annual_plan_container div img[name="music_icon"]{
+        margin-right: 20px;
+      }
+
+      .annual_plan_container div p[name="annualPlan59.99"]{
+        margin-right: 40px;
+      }
+
+      .annual_plan_container div a[name="changePlan_link"]{
+        transition: color 1s;
+        
+      }
+      .annual_plan_container div a[name="changePlan_link"]:hover{
+        color:hsla(245, 75%, 52%, 0.527);
+        text-decoration: none;
+      }
+      #annualPlan_txt{
+        font-weight: bold;
+        color:hsl(223, 47%, 23%);
+      }
+
+      #annualMoney{
+        color: hsl(224, 23%, 55%);
+      }
+      /*this area contains 2 buttons*/
+      .payment_container{
+        align-items: center; 
+        padding: 15px;
+      }
+
+      .payment_container input[name="Proceed to Payment"]{
+        background-color: hsl(245, 75%, 52%);
+        color: white; /* onHover make lighter*/
+        border-radius: 10px;
+        padding: 15px 75px;
+        margin-bottom: 15px;
+        width: 280px;
+        font-weight: bold;
+        border: 0;
+        box-shadow: 0px 15px 15px hsla(247, 26%, 73%, 0.427);
+        transition: background-color 1s;
+
+      }
+      .payment_container input[name="Proceed to Payment"]:hover{
+        background-color: hsla(245, 75%, 52%, 0.527);
+        cursor: pointer;
+      }
+
+      .payment_container input[name="Cancel Order"]{
+        color: hsl(224, 23%, 55%);/* onHover hsl(223, 47%, 23%)*/
+        border-radius: 10px;
+        padding: 15px 98px;
+        margin-bottom: 5px;
+        width: 280px;
+        font-weight: bold;
+        border: 0;
+        background-color: transparent;
+        transition: color 1s;
+      }
+      .payment_container input[name="Cancel Order"]:hover{
+        color: hsl(223, 47%, 23%);
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="main_container">
+      <div class="head_img">
+        <img src="./images/illustration-hero.svg" alt="" name="dancer" />
+      </div>
+      <div class="order_summary_container">
+        
+        <div class="order_summary_text_container">
+          <h2>Order Summary</h2>
+          <p>
+            You can now listen to millions of songs, audiobooks, and podcasts on
+            any device anywhere you like!
+          </p>
+        </div>
+        <div class="annual_plan_container">
+          <div>
+            <img src="./images/icon-music.svg" alt="music" name="music_icon"/>
+          </div>
+          <div>
+            <p name="annualPlan59.99">
+              <span id="annualPlan_txt">Annual Plan <br /></span>
+              <span id="annualMoney">$59.99/year</span>
+            </p>
+          </div>
+          <div>
+            <a href="#" name="changePlan_link">Change</a>
+          </div>
+        </div>
+        <div class="payment_container">
+          <input type="button" value="Proceed to Payment" name="Proceed to Payment"/><br>
+          <input type="button" value="Cancel Order" name="Cancel Order"/>
+        </div>
+      </div>
+    </div>
+
+   <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">C7e-A3i</a>.
+    </div>-->
+  </body>
+</html>
